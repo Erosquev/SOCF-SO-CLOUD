@@ -21,7 +21,7 @@ print(psutil.cpu_percent())
 # Obtém uso de memória (MB)
 print(psutil.virtual_memory().used // 1024 **2)
 
-metricas ={
+metricas_dic ={
     'pid': os.getpid(),
     'memoria_mb': psutil.virtual_memory().used // 1024 ** 2,
     'uso_cpu': psutil.cpu_percent(),
@@ -29,7 +29,7 @@ metricas ={
 }
 
 # transformando em texto para json
-print(json.dumps(metricas, ensure_ascii=False))
+print(json.dumps(metricas_dic, ensure_ascii=False))
 
 from flask import Flask
 
@@ -45,7 +45,7 @@ def info():
 
 @app.route('/metricas')
 def metricas():
-    return json.dumps(metricas, ensure_ascii=False)
+    return jsonify(json.dumps(metricas_dic, ensure_ascii=False))
 
 if __name__ == '__main__':
     app.run(debug=True)
