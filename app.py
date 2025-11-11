@@ -40,7 +40,7 @@ def home():
 
 @app.route('/info')
 def info():
-    return nomeIntegrante
+    return jsonify(json.dumps(nomeIntegrante, ensure_ascii=False))
 
 @app.route('/metricas')
 def metricas():
