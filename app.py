@@ -22,6 +22,7 @@ print(psutil.cpu_percent())
 print(psutil.virtual_memory().used // 1024 **2)
 
 metricas_dic ={
+    'nome integrante': nomeIntegrante,
     'pid': os.getpid(),
     'memoria_mb': psutil.virtual_memory().used // 1024 ** 2,
     'uso_cpu': psutil.cpu_percent(),
