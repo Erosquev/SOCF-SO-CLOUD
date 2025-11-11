@@ -47,5 +47,7 @@ def info():
 def metricas():
     return jsonify(json.dumps(metricas_dic, ensure_ascii=False))
 
+APP = app
+
 if __name__ == '__main__':
     app.run(debug=True)
