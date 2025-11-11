@@ -32,8 +32,6 @@ metricas_dic ={
 # transformando em texto para json
 print(json.dumps(metricas_dic, ensure_ascii=False))
 
-from flask import Flask
-
 app = Flask(__name__)
 
 @app.route('/')
